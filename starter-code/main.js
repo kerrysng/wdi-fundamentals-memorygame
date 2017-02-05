@@ -1,19 +1,11 @@
-console.log("JS file is connected to HTML! Woo!")
-var cardOne = "queen";
-var cardTwo = "queen";
-var cardThree = "king";
-var cardFour = "king";
+var cards = ['queen', 'queen', 'king', 'king' ];
 
- if(cardTwo === cardFour) {
-	alert('You found a match!');
-};
-else { alert('Sorry, try again');
-}; 
+ var cardsInPlay = [];
 
 var board = document.getElementById('game-board');
 
-function createCards = function() {
-	for (var i = 0; i<4; i++) {
+function createCards() {
+	for (var i=0; i<4; i++) {
 		
 		var cardElement = document.createElement('div');
 		cardElement.className = 'card';
@@ -24,15 +16,16 @@ function createCards = function() {
 		board.appendChild(cardElement);
 
 	}
+}
 
 function isTwoCards() {
 	cardsInPlay.push(this.getAttribute('data-card'));
 	console.log(this.getAttribute('data-card'));
 
 	if (this.getAttribute('data-card') === 'king') {
-		this.innerHTML = "<img src= "C:\Users\kerrysng\Desktop\General Assembly\kingCard.png">";
+		this.innerHTML = "<img src= 'C:\Users\kerrysng\Desktop\General Assembly\kingCard.png'>";
 	} else {
-		this.innerHTML = "<img src= "C:\Users\kerrysng\Desktop\General Assembly\queenCard.png">";
+		this.innerHTML = "<img src= 'C:\Users\kerrysng\Desktop\General Assembly\queenCard.png'>";
 	}
 	
 	if (cardsInPlay.length === 2) {
@@ -48,4 +41,5 @@ function isMatch(cards) {
 	else {
 		alert("Sorry, try again.")
 	}
+
 }
